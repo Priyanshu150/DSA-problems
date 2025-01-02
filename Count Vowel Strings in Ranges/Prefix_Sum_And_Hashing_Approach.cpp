@@ -2,7 +2,7 @@
 using namespace std;
 
 //Time complexity :- O(N)       //where n is the size of words array
-//Space complexity :- O(N)      //using map to store every ndex of words
+//Space complexity :- O(N)      //using map to store every index of words
 
 //Approach :- 
 //Precompute the prefix sum of strings that start and end with vowels.

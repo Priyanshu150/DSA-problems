@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complexity :- O(N)
-//Space complexity :- O(N)
+//Time complexity :- O(N)       //where n is the size of array of numbers
+//Space complexity :- O(N)      // using map to store every combination of sum
 
 //Note:- unordered_map take O(1) in searching 
 
