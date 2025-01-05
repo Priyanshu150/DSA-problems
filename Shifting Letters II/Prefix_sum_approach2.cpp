@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Link(leetcode) :- https://leetcode.com/problems/shifting-letters-ii/description/
+
 //Time complexity :- O(M + N)       // Where m is length of shift array and n is length of string s
 //Space complexity :- O(N+1)       // for prefix sum array
 
