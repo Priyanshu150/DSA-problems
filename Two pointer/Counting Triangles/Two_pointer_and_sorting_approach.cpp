@@ -13,6 +13,10 @@ using namespace std;
 // if sum > c   => length += (rInd - lInd)  and rInd-- (find other window)
 // else   lInd++    (increase the sum )
 
+//Links :- 
+// (gfg)    https://www.geeksforgeeks.org/problems/count-possible-triangles-1587115620/1
+// (interviewbit)   https://www.interviewbit.com/problems/counting-triangles/
+
 
 int nTriang(vector<int> &arr) {
     int n = arr.size(), cnt = 0;
