@@ -1,6 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Time complexity :- O(min(N,M) + N*log(N) + M*log(M) )
+//Space complexity :- O(1)
+
+//Approach :- 
+// Point index at last ele1 of arr1 and first ele2 of arr2 
+// swap if (ele1 < ele2)
+// finally sort both the array
+
+//Links :- https://www.interviewbit.com/problems/merge-two-sorted-lists-ii/
+
 class Solution {
   public:
     void mergeArrays(vector<int>& a, vector<int>& b) {
