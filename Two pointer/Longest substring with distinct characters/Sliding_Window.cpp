@@ -2,7 +2,7 @@
 using namespace std;
 
 //Time complexity :- O(N)       
-//Space complexity :- O(26)    
+//Space complexity :- O(1)    
 
 //Approach :-
 //Use sliding window to check which window for valid window
