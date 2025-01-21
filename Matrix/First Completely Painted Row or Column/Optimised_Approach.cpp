@@ -25,16 +25,16 @@ public:
                 mp[mat[row][col]] = {row, col};
             }
         }
-        vector<int> rowsPainted(n, 0), colsPainted(m, 0);
+        vector<int> rows(m, 0), cols(n, 0);
 
         for(int i=0; i<(n*m); ++i){
             int row = mp[arr[i]].first;
             int col = mp[arr[i]].second;
 
-            rowsPainted[row] += 1;
-            colsPainted[col] += 1;
+            rows[col] += 1;
+            cols[row] += 1;
 
-            if(rowsPainted[row]==m || colsPainted[col] == n)
+            if(rows[col]==n || cols[row] == m)
                 return i;
         }
         return 0;
