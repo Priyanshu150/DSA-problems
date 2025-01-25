@@ -15,6 +15,7 @@ using namespace std;
 // Traverse the copy list in grp and store the index of a grp
 // Sort the index of grp and then put the value from copy on the sorted index of the original array
 // Both copy and index are sorted so at sorted index we will have least value 
+// Follow techDose youTube video for more details 
 
 //Link :- https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements/description/
 
