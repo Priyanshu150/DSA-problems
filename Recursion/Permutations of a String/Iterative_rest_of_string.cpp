@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O(9^n)
+//Time complextiy :- O(n!)
 // Space complexity :- O(n!)
 
 // Approach :- 
