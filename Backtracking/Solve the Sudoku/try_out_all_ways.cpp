@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O(n*n)
-// Space complexity :- O(n*n)
+//Time complextiy :- O(9^n)
+// Space complexity :- O(1)
 
 // Approach :- 
 // Go on every cell of sudoku and try out keep every number one by one 
