@@ -9,6 +9,8 @@ using namespace std;
 // find which one have larger length
 // For find either of them traverse the array and keep track of the length depending on the previous number occured
 
+// Link :- https://leetcode.com/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/description/
+
 class Solution {
 public:
     int longestMonotonicSubarray(vector<int>& nums) {
