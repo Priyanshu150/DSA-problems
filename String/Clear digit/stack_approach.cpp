@@ -5,27 +5,29 @@ using namespace std;
 // Space complexity :- O(n)
 
 // Approach :-  
-// Use stack to solve the problem 
-// Traverse the string by each char, if we got digit pop from the stack other push into the stack
+// Traverse the string by each char and use stack to track the characters
+// if we got digit pop prev char from the stack otherwise push into the stack
 
-// Link :- https://leetcode.com/problems/count-number-of-bad-pairs/
+// Link :- https://leetcode.com/problems/clear-digits/description/
 
 class Solution {
-    #define ll long long 
-public:
-    long long countBadPairs(vector<int>& nums) {
-        ll res = 0;
-        int n = nums.size();
-        unordered_map<int, ll> mp;
-
-        for(int i=0; i<n; ++i){
-            int new_pair = i, value = nums[i] - i;
-            if(mp.count(value))
-                new_pair -= mp[value];
+    public:
+        string clearDigits(string s) {
+            stack<char> st;
+    
+            for(auto ch: s){
+                if(isdigit(ch)){
+                    if(!st.empty())
+                        st.pop();
+                }
+                else    st.push(ch);
+            }
+            string res = "";
             
-            res += new_pair;
-            mp[value] += 1;
+            while(!st.empty()){
+                res = st.top() + res;
+                st.pop();
+            }
+            return res;
         }
-        return res;
-    }
-};
+    };
