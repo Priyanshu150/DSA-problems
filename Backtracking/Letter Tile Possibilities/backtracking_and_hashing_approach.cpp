@@ -5,6 +5,12 @@ using namespace std;
 // Space complexity :- O(n)
 
 // Approach :-  
+// Start initially with empty string(temp) and frequency array which mark the index take(freq)
+// Add one of the char in temp and mark that as taken in freq array and apply recursion for further cases
+// backtrack and undone the following to get other char same place
+// Use hash set to store all the sequence generated which in return will delete the duplicate
+// If a string is present in the string there is no point continuing because we'll get the same sequence from some tree which we got earlier
+// Above step will increase a pruning approach and hence will be slightly faster
 
 // Link :- https://leetcode.com/problems/letter-tile-possibilities/description/
 
