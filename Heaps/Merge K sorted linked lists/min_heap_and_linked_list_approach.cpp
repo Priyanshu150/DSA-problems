@@ -1,8 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O(n)
-// Space complexity :- O(n)
+//Time complextiy :- O(n*sz + m)
+// Space complexity :- O(m)
+// where, sz is the size of array, n is number of list in array, m is total number of nodes
 
 // Approach :-  
 // use min heap to keep all the head pointer along with it data in it
