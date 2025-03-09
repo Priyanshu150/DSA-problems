@@ -6,7 +6,7 @@ using namespace std;
 
 //Approach :-
 // We use previously calculate state to calculate wheather current window is a palindrom or not 
-// the idea is string 'a' or 'aa' is palindrom, then if we add a eqaul char at both side then it also be a palindrome i.e. 'cac' and 'caac'
+// the idea is string if 'a' or 'aa' is palindrom, then if we add a eqaul char at both side then it also be a palindrome i.e. 'cac' or'caac'
 // using this logic we can eliminate the caluclation of palindrome of each string 
 // and mainating a 2d dp which can tell wheather the window of size (i+1)(j-1) is a palindrom of not only if s[i] == s[j]
 // In 2d dp, we'll travese diagonally for length 1, 2, 3 ... n string size
