@@ -8,7 +8,7 @@ using namespace std;
 // Consider each window of size K, we can find the minimum number of white clored blocks in the window
 // we can use a sliding window to solve this problem and the min white colored window will be our answer
 
-//link :- https://www.geeksforgeeks.org/problems/decode-the-string2444/1
+//link :- https://leetcode.com/problems/minimum-recolors-to-get-k-consecutive-black-blocks/
 
 class Solution {
 public:
