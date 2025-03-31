@@ -10,7 +10,9 @@ using namespace std;
 // In inner loop, keep updating the last index depending on the incoming chars 
 // once inner loop traversal is completed store the lenght in the ans
 
-// Links :- https://leetcode.com/problems/partition-labels/
+// Links :- 
+// (leetcode) https://leetcode.com/problems/partition-labels/
+// (gfg) https://www.geeksforgeeks.org/problems/maximize-partitions-in-a-string/1
 
 
 class Solution {

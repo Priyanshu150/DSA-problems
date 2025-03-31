@@ -10,7 +10,9 @@ using namespace std;
 // reapet this until the char present in the set has 0 freq (inner loop)
 // once inner loop is completed push the length into answer vector 
 
-// Links :- https://leetcode.com/problems/partition-labels/
+// Links :- 
+// (leetcode) https://leetcode.com/problems/partition-labels/
+// (gfg) https://www.geeksforgeeks.org/problems/maximize-partitions-in-a-string/1
 
 
 class Solution {
