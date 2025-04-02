@@ -13,7 +13,7 @@ using namespace std;
 // 5. for calculating the power use binary exponentiation 
 
 
-// Links :- https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1
+// Links :- https://leetcode.com/problems/apply-operations-to-maximize-score/
 
 class Solution {
     #define ll long long 
