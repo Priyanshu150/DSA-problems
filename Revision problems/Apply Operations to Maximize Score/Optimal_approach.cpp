@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Time complexity :- O(n)                  // Where n is number of nodes
-// Space complexity :- O(n)                  // n is space for vis arrays and queue
+// Time complexity :- O(n+n+log(n)+k*log(b))                 
+// Space complexity :- O(n+n+n)                  
 
 // Approach :-
 // We can solve this question by combination of multiple algorithm
