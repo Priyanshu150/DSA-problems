@@ -11,7 +11,9 @@ using namespace std;
 // if we can then other subset will also have the sum/2 total sum
 // we can isSubsetSum problem to find that using arr can we make sum/2 as desired
 
-// Link :- https://www.geeksforgeeks.org/problems/subset-sum-problem2014/1
+// Link :- 
+// (gfg) https://www.geeksforgeeks.org/problems/subset-sum-problem2014/1
+// (leetcode) https://leetcode.com/problems/partition-equal-subset-sum/
 
 class Solution {
   private:
