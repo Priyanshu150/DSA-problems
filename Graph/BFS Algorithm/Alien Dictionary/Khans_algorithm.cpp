@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Time complexity :- O(n)
-// Space complexity :- O(n)
+// Time complexity :- O(V+E)
+// Space complexity :- O(words.length*each_word_length + V+E)
 
 // Approach :-
 // Using the words given create a directed graph on based on the logic
