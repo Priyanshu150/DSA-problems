@@ -5,6 +5,11 @@ using namespace std;
 // Space complexity :- O(n)
 
 // Approach :-
+// maintain a prefix sum based on array, if the number is greater than k then add +1 otherwise -1
+// if any point prefix sum if greater than 0 than mean the current subbarry has majority element greater that k
+// maintain every prefix sum first occurence in the map with their indexes
+// At any index if the prefix sum increases that means a number greater than k value exist in that window
+// so we can find the index of prefix sum -1 in map and calulate the max length with (curr_ind - mp[prefixSum - 1])
 
 
 // Link :- https://www.geeksforgeeks.org/problems/longest-subarray-with-majority-greater-than-k/1
