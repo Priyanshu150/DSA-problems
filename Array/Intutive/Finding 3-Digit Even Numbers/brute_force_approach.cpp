@@ -9,7 +9,7 @@ using namespace std;
 // form a number using these 3 number and hash it and build answer
 
 
-// Link :- https://leetcode.com/problems/three-consecutive-odds/
+// Link :- https://leetcode.com/problems/finding-3-digit-even-numbers/
 
 class Solution {
 public:
