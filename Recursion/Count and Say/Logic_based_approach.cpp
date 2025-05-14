@@ -9,7 +9,8 @@ using namespace std;
 // apply recusion for caluclation the answer of number provided 
 // base case will be when n == 1, then return 1
 
-// Link :- https://leetcode.com/problems/count-and-say/
+// Link :- (leetcode) https://leetcode.com/problems/count-and-say/ 
+// Link :- (gfg) https://www.geeksforgeeks.org/problems/decode-the-pattern1138/1
 
 class Solution {
 public:
