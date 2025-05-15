@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complexity :- O(sz*sz*m*n)   
-//Space complexity :- O(1)
+//Time complexity :- O(n)   
+//Space complexity :- O(26)
 
 // Approach :- 
 // count the frequency of each character in the stirng 
