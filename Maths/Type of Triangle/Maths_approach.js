@@ -1,6 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-
 //Time complextiy :- O(1)
 // Space complexity :- O(1)
 
