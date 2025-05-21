@@ -1,6 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Time complextiy :- O(n*m)  
+// Space complexity :- O(n + m)
+
+// Approach :- 
+// maintain 2 array, one for row and other for col where we mark the value the current row or col is 0
+// matrix[row][col] = 0, then mark the row and col as true indicating that is 0
+// traverse the matrix again and if row or col is marked as true and put the value as 0
+
+// Link :- https://leetcode.com/problems/set-matrix-zeroes/
+
 class Solution {
   public:
     void setMatrixZeroes(vector<vector<int>> &mat) {
