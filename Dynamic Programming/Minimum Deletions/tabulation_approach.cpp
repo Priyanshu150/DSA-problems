@@ -5,6 +5,8 @@ using namespace std;
 // Space complexity :- O(1)
 
 // Approach :- 
+// using lis find the longest palindromic string (lps)
+// The the all the redundant char apart from lps needs to be deleted i.e. length - lps
 
 // Link :- https://www.geeksforgeeks.org/problems/minimum-deletitions1648/1
 
