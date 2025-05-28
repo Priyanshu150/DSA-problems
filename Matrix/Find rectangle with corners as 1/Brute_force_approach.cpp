@@ -5,6 +5,12 @@ using namespace std;
 // Space complexity :- O(1)              
 
 // Approach :- 
+// Traversing on every cell to find the cell whose value is set as 1 
+// If we find such cell in the row we'll find the other col where the value is 1 
+// once we find it if we get those to be column and check if there is a column exist 
+// where the val of both rows is set as 1, if such conditions exist then it's possible(return true)
+// other after applying it for every row return false
+// This can also be done in terms of column
 
 
 // Links :- https://www.geeksforgeeks.org/problems/find-rectangle-with-corners-as-1--141631/1

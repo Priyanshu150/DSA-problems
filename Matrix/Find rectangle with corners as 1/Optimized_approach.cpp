@@ -5,7 +5,13 @@ using namespace std;
 // Space complexity :- O(n)              
 
 // Approach :- 
-
+// Count the number of rows in every column 
+// Now find two rows where column count is greater than 1 
+// traverse on the each column and check the count the number of condition where 
+// mat[row1][col] == 1 && mat[row2][col] == 1
+// if the count if greater than 1 then it's possible otherwise after exploring every case didn't find any such condition
+// then it's not possible 
+// The same can be done in column perspective 
 
 // Links :- https://www.geeksforgeeks.org/problems/find-rectangle-with-corners-as-1--141631/1
 
