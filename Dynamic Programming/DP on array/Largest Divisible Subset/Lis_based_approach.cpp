@@ -12,7 +12,8 @@ using namespace std;
 // store the index where maximum dp length is observed 
 
 
-// Links :- https://leetcode.com/problems/largest-divisible-subset/
+// leetcode link :- https://leetcode.com/problems/largest-divisible-subset/
+// gfg link :- https://www.geeksforgeeks.org/problems/largest-divisible-subset--170643/1
 
 class Solution {
 public:
