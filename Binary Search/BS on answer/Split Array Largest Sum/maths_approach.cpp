@@ -15,7 +15,8 @@ using namespace std;
 // atlast if the cnt <= k that means it's possible otherwise it's not 
 
 
-// Link :- https://www.geeksforgeeks.org/problems/split-array-largest-sum--141634/1
+// Link(gfg) :- https://www.geeksforgeeks.org/problems/split-array-largest-sum--141634/1
+// Link(leetcode) :- https://leetcode.com/problems/split-array-largest-sum/
 
 class Solution {
   private:
