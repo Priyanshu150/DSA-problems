@@ -18,7 +18,7 @@ using namespace std;
 // if l1 <= r2 and l2 <= r1, that means its a valid split calculate the median 
 // if even then, ((double)(max(l1,l2)) + min(r1, r2))/2.0
 // other for odd, max(l1, l2);
-// if l1 > l2, then we need to decrease number from first array so, high = mid-1
+// if l1 > r2, then we need to decrease number from first array so, high = mid-1
 // otherwise we've to increase the number heance low = mid+1
 
 // Link :- https://leetcode.com/problems/median-of-two-sorted-arrays/
@@ -46,7 +46,7 @@ public:
                 if(n%2 == 1)        return max(l1, l2);
                 return ((double)(max(l1,l2)) + min(r1, r2))/2.0;
             }
-            else if(l1 > l2)    high = mid1-1;
+            else if(l1 > r2)    high = mid1-1;
             else                low = mid1+1;
         }
         return 0;
