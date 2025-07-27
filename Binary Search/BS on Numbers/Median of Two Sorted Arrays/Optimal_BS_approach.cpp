@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O(log(n+m))  
+//Time complextiy :- O(log(min(n, m)))  
 // Space complexity :- O(1)
 
 // Approach :- 
@@ -11,7 +11,6 @@ using namespace std;
 // for a valid split some number should be coming from nums1 or nums2 
 // for choosing the number we can use binary search 
 // we'll take 0 to len(nums1) number from nums1 and left of the number from nums2 
-// our logic is based on the fact that len(num1) > len(nums2) so swap these if not in ideal situation
 // so low can be 0 and high = len(nums1), using standard binary search 
 // mid will give the number at middle, we'll calculate the middle for both the array 
 // and we'll ponit l1, l2, r1, r2 to middle and middle-1 index of both the array
@@ -19,7 +18,8 @@ using namespace std;
 // if even then, ((double)(max(l1,l2)) + min(r1, r2))/2.0
 // other for odd, max(l1, l2);
 // if l1 > r2, then we need to decrease number from first array so, high = mid-1
-// otherwise we've to increase the number heance low = mid+1
+// otherwise we've to increase the number heance low = mid+
+// try applying binary search on the sorter array 
 
 // Link :- https://leetcode.com/problems/median-of-two-sorted-arrays/
 
