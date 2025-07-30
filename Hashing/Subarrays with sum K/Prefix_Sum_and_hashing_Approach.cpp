@@ -6,6 +6,18 @@ using namespace std;
 
 //Note:- unordered_map take O(1) in searching 
 
+// Approach :-
+// For finding a subarray with sum k we can use hashing approach
+// sliding window will not work because the array doesn't represents increasing or decreasing nature
+// two subbarray can contribute to have sum equal to subbarray sum till current index
+// i.e. sub_array_till_ind_i(a) + sub_array_till_ind_j(b) = sub_array_till_curr_ind
+// i.e. a + k = curr_sum   => a = curr_sum - k, where a repsents any valid subarray sum till prev index
+// hence we'll use a map to store the sum and their respective count 
+// traversing on the array we'll calucalte the sum and target needed to complete the subbarray sum eqaul to k
+// if we find such target in our map we'll include that count and add current sum to map
+
+// link :- https://www.geeksforgeeks.org/problems/subarrays-with-sum-k/1
+
 class Solution {
   public:
     int countSubarrays(vector<int> &arr, int k) {
