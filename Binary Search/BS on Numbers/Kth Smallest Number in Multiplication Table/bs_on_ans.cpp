@@ -15,7 +15,9 @@ using namespace std;
 // where rowNo is 1 to m 
 
 
-// Link :- https://www.geeksforgeeks.org/problems/kth-smallest-number-in-multiplication-table/1
+// Link :- 
+// (gfg) https://www.geeksforgeeks.org/problems/kth-smallest-number-in-multiplication-table/1
+// (leetcodee) https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/
 
 class Solution {
   private:
