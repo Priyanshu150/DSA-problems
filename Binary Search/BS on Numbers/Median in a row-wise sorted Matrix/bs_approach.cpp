@@ -23,11 +23,11 @@ using namespace std;
 
 class Solution {
   private:
-    int smallerOrEqualCount(int num, vector<vector<int>> &mat, int &n, int &m){
+    int numberSmallerorEqual(int val, vector<vector<int>> &mat, int &n, int &m){
         int cnt = 0;
         
         for(int row=0; row<n; ++row){
-            int ind = upper_bound(mat[row].begin(), mat[row].end(), num) - mat[row].begin();
+            int ind = upper_bound(mat[row].begin(), mat[row].end(), val) - mat[row].begin();
             cnt += ind;
         }
         return cnt;
@@ -36,19 +36,17 @@ class Solution {
   public:
     int median(vector<vector<int>> &mat) {
         // code here
-        int n = mat.size(), m = mat[0].size(), res(-1), k = (n*m)/2 + 1;
-        int low = 1, high = 2000;
+        int n = mat.size(), m = mat[0].size(), half = (n*m+1)/2;
+        int low = 1, high = 2000, res = 0;
         
         while(low <= high){
             int mid = low + (high - low)/2;
-            int cnt = smallerOrEqualCount(mid, mat, n, m);
-            if(cnt >= k){
+            int cnt = numberSmallerorEqual(mid, mat, n, m);
+            if(half <= cnt){
                 res = mid;
                 high = mid-1;
             }
-            else if(cnt < k){
-                low = mid+1;
-            }
+            else  low = mid+1;
         }
         return res;
     }
