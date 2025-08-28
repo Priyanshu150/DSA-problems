@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O(n*log(n) + n*n*log(n))
+//Time complextiy :- O(n)
 // Space complexity :- O(1)
 
 // Approach :-  
