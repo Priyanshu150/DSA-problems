@@ -9,9 +9,11 @@ using namespace std;
 // start with extreme right and left pointer 
 // And increase the pointer from that end which has smaller height
 // Becuase as long as that height is included the height of line remain will be small 
-// And once increasing the pointere there will be chance of finding new height 
+// And once increasing the pointer there will be chance of finding new height 
 
-//link :- https://www.interviewbit.com/problems/container-with-most-water/
+//links :- 
+// (interviewbit) https://www.interviewbit.com/problems/container-with-most-water/
+// (gfg) https://www.geeksforgeeks.org/problems/container-with-most-water0535/1
 
 int maxArea(vector<int> &arr) {
     int n = arr.size(), st = 0, end = n-1, res = 0;
