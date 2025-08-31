@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O(9^n)
+//Time complextiy :- O(9^n * 81), n is the number of empty cells
 // Space complexity :- O(1)
 
 // Approach :- 
@@ -11,7 +11,9 @@ using namespace std;
 // Check whether the recurion is returning true for it's sub-problem and return true for that point
 // Return type of recursion should be true to check whether sub-problem to know whether it has successded or not 
 
-//Link :- https://www.geeksforgeeks.org/problems/solve-the-sudoku-1587115621/1
+//Link :- 
+// (gfg) https://www.geeksforgeeks.org/problems/solve-the-sudoku-1587115621/1
+// (leetcode) https://leetcode.com/problems/sudoku-solver/
 
 class Solution {
   private:
