@@ -31,30 +31,41 @@ using namespace std;
  */
 
 class Solution {
-    private:
-    unordered_map<int,int> mp;
-
-    TreeNode* solve(int prs, int pre, int pos, int poe, vector<int>& preorder){
-        if(prs > pre || pos > poe)
+  private:
+    unordered_map<int,int> mp;  // mapping post_value to index
+    
+    Node* solve(int preSt, int preEnd, vector<int> &pre, int postSt, int postEnd, 
+    vector<int> &post){
+        
+        if(preSt > preEnd || postSt > postEnd)
             return nullptr;
         
-        if(prs == pre || pos == poe)
-            return new TreeNode(preorder[prs]);
+        if(preSt == preEnd && postSt == postEnd)
+            return new Node(pre[preSt]);
         
-        TreeNode* nd = new TreeNode(preorder[prs]);
-        int ind = mp[preorder[prs+1]], len = ind - pos + 1;
-
-        nd -> left = solve(prs+1, prs+len, pos, ind, preorder);
-        nd -> right = solve(prs+len+1, pre, ind+1, poe, preorder);
-        return nd;
+        // make the root node 
+        Node* root = new Node(pre[preSt]);
+        // find the left child
+        int ind = mp[pre[preSt+1]];
+        // calculate the number of nodes in left child 
+        int numOfNode = ind - postSt + 1;
+        
+        // left child formation
+        root -> left = solve(preSt+1, preSt+numOfNode, pre, postSt, ind, post);
+        // right child formation 
+        root -> right = solve(preSt+numOfNode+1, preEnd, pre, ind+1, postEnd-1, post);
+        
+        return root;
     }
-
-public:
-    TreeNode* constructFromPrePost(vector<int>& preorder, vector<int>& postorder) {
-        int n = preorder.size();
+    
+  public:
+    Node *constructTree(vector<int> &pre, vector<int> &post) {
+        // code here
+        int n = pre.size();
+        // mapping value to index
         for(int i=0; i<n; ++i)
-            mp[postorder[i]] = i;
+            mp[post[i]] = i;
         
-        return solve(0, n-1, 0, n-1, preorder);
+        return solve(0, n-1, pre, 0, n-1, post);
     }
 };
