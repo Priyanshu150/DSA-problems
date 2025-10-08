@@ -14,7 +14,9 @@ using namespace std;
 // base case will be when we've no element or only 1 element
 
 
-// Link :- https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/description/
+// Link :- 
+// (leetcode) https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/description/
+// (gfg) https://www.geeksforgeeks.org/problems/construct-tree-from-preorder-postorder/1
 
 /**
  * Definition for a binary tree node.
