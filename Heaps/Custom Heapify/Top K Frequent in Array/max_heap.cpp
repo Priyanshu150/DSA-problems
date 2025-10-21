@@ -5,6 +5,9 @@ using namespace std;
 // Space complexity :- O(K)
 
 // Approach :-  
+// Count the frequency of each element and push it into max_heap 
+// using custom sorting technique to sort the heap accordingly 
+// and keep only k element in the heap which will be our answer 
 
 
 // Link :- https://www.geeksforgeeks.org/problems/top-k-frequent-elements-in-array/1
