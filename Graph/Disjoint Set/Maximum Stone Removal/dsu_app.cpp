@@ -1,10 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O((V+E)logV)
-// Space complexity :- O(V+E)
+//Time complextiy :- O(V)
+// Space complexity :- O(V)
 
 // Approach :- 
+// All the (row, col) pair can be combined to form a component 
+// number pair we can delete is (num_of_edge - num_of_comp)
+// each row and col can be represented as nodes and can be combined using dsu
+// we can use set to keep track of the total number of component 
 
 // Link :- https://www.geeksforgeeks.org/problems/maximum-stone-removal-1662179442/1
 
