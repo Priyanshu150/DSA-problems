@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Time complextiy :- O(log(L))
+// Time complextiy :- O(log(R))
 // Space complexity :- O(1)
 
 // Approach :-   
