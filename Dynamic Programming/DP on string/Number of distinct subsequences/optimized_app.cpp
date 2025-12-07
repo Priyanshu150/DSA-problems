@@ -6,6 +6,12 @@ using namespace std;
 
 // Approach :-   
 // for creating every subsequence possible subsequence we'll use take or not take case 
+// following the same principle there will 2*prev_sub-sequence_count for curr_subsequence_count
+// if we remove the duplicate that will be our answer 
+// every time a char is repeated that mean that many number of sub-sequence will be repeated 
+// so we'll prune the branch directly i.e. we'll subtract that sub-sequence from current count 
+// we'll update the index of each occuring in an array 
+// dp[freq[s[i] - 'a']] will represent how many string generated previously using repating s[i]
 
 //Link :- https://www.geeksforgeeks.org/problems/number-of-distinct-subsequences0909/1
 
