@@ -2,7 +2,7 @@
 using namespace std;
 
 //Time complexity :- O(m*log(n) + n)
-//Space complexity :- O(m*log(n)) 
+//Space complexity :- O(n+m) 
 
 // Approach :-
 // Instead of using queue we can use priority_queue in previous option 
