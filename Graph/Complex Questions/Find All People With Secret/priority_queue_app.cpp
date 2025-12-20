@@ -11,6 +11,62 @@ using namespace std;
 
 //link :- https://leetcode.com/problems/find-all-people-with-secret/
 
+// app1 
+class Solution {
+private:
+    using pii = pair<int,int>; // {time, person}
+public:
+    vector<int> findAllPeople(int n, vector<vector<int>>& meetings, int firstPerson) {
+        vector<vector<pii>> graph(n);
+
+        // build an undirected graph: {neighbor, meetingTime}
+        for (auto &m : meetings) {
+            int u = m[0], v = m[1], t = m[2];
+            graph[u].push_back({v, t});
+            graph[v].push_back({u, t});
+        }
+
+        // personKnows[i] = earliest time at which person i knows the secret
+        const int INF = INT_MAX;
+        vector<int> personKnows(n, INF);
+        personKnows[0] = 0;
+        personKnows[firstPerson] = 0;
+
+        // min-heap: (time, person)
+        priority_queue<pii, vector<pii>, greater<pii>> pq;
+        pq.push({0, 0});
+        pq.push({0, firstPerson});
+
+        // Dijkstra-like traversal
+        while (!pq.empty()) {
+            auto [time, person] = pq.top();
+            pq.pop();
+
+            // Outdated entry check
+            if (time > personKnows[person]) continue;
+
+            for (auto &[nextPerson, meetTime] : graph[person]) {
+                // can only spread secret forward in time
+                if (meetTime < time) continue;
+
+                // relax edge: if we can know earlier
+                if (meetTime < personKnows[nextPerson]) {
+                    personKnows[nextPerson] = meetTime;
+                    pq.push({meetTime, nextPerson});
+                }
+            }
+        }
+
+        vector<int> res;
+        for (int i = 0; i < n; ++i) {
+            if (personKnows[i] != INF)
+                res.push_back(i);
+        }
+        return res;
+    }
+};
+
+// app2
 class Solution {
 private:
     typedef pair<int,int> pii;
