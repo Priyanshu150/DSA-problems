@@ -1,10 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complexity :- O()
-//Space complexity :- O() 
+//Time complexity :- O(m*log(n) + n)
+//Space complexity :- O(m*log(n)) 
 
 // Approach :-
+// Instead of using queue we can use priority_queue in previous option 
+// skipping those which are already visited 
+// and will mark node visited only when all the adjNd of that node are visited and so on 
 
 //link :- https://leetcode.com/problems/find-all-people-with-secret/
 
