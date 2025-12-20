@@ -5,6 +5,15 @@ using namespace std;
 //Space complexity :- O(n+m) 
 
 // Approach :-
+// sorting based on time will not work here because we don't know at time which persons knows the secret
+// instead we can maintain an time -> meeting mapping 
+// we'll maintian the timings in sorted order and all the meeting happening at that time 
+// we can use a bool array to keep track of the person who knows the secret 
+// for every time entry, we'll make a graph from the meeting 
+// and will start the traversal from the people who know the secret and marking the child of them
+// through the travesal we'll know the set of peoples knowing the secret 
+// this we'll do in ordered value of time 
+// at last we can check who all knows the secret 
 
 //link :- https://leetcode.com/problems/find-all-people-with-secret/
 

@@ -5,6 +5,14 @@ using namespace std;
 //Space complexity :- O(n+m) 
 
 // Approach :-
+//  we can make a undirected graph directly by storing the p1 -> {{p2, t1}, {p3, t2}, ....}
+// and we'll maintain and array where we'll try to keep the min time at which a person knows the secret
+// using graph travesal, {person, time} will be the state 
+// finding the next person will tell the secret to them only when 
+// 1) time at which meeting is happening >= time at which person knows the secret 
+// 2) if the curr time at which next person knows the secret > meeting time 
+// that ways we can mark all the person who knows the secret 
+// and return the answer of the people whose time to know the secret is not int_max
 
 //link :- https://leetcode.com/problems/find-all-people-with-secret/
 
