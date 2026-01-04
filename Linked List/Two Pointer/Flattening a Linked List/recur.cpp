@@ -5,9 +5,8 @@ using namespace std;
 //Space complexity :- O(n)
 
 // Approach :-
-// for flatening the list we can select 2 list at at time 
-// and merge them using bottom pointer
-// finally return the merge head as our final list 
+// use recursion to flaten the next list 
+// and merge two list using bottom pointer 
 
 //link :- https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1
 
@@ -50,19 +49,15 @@ class Solution {
             ptr = ptr -> bottom;
         }
         // list2 is exhausted and list1 still remains 
-        while(ptr1){
+        if(ptr1){
             ptr -> bottom = ptr1;
-            ptr1 = ptr1 -> bottom;
             ptr = ptr -> bottom;
         }
         // list1 is exhausted and list2 still remains 
-        while(ptr2){
+        else{
             ptr -> bottom = ptr2;
-            ptr2 = ptr2 -> bottom;
             ptr = ptr -> bottom;
         }
-        // reset the last bottom node 
-        ptr -> bottom = nullptr;
         
         // update the links and delete the extra nodes 
         Node* toDelete = newHead;
@@ -74,20 +69,14 @@ class Solution {
   
   public:
     Node *flatten(Node *root) {
-        if(!root)
+        if(!root || !root->next)
             return root;
         
-        Node* curr = root;
+        // recur for next list 
+        root -> next = flatten(root -> next);
         
-        // until next ptr exist we'll flaten the list 
-        while(curr -> next){
-            // save the next ptr 
-            Node* ahead = curr -> next -> next;
-            // merge the curr and next list 
-            curr = mergeSortedList(curr, curr -> next);
-            // update the link for both
-            curr -> next = ahead;
-        }
-        return curr;
+        // now merge the current and next list
+        root = mergeSortedList(root, root->next);
+        return root;
     }
 };
