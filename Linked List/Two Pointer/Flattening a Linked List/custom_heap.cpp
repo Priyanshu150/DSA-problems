@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complexity :- O(n*m*log(n))
-//Space complexity :- O(n)
+//Time complexity :- O(n*log(k))
+//Space complexity :- O(k)
 
 // Approach :-
 // create a cutom heap and add the  {address} into the heap

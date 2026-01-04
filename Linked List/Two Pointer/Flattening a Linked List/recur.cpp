@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complexity :- O(n*n*m)
-//Space complexity :- O(n)
+//Time complexity :- O(n*k)
+//Space complexity :- O(k)
 
 // Approach :-
 // use recursion to flaten the next list 
