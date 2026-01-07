@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complexity :- O(n)
-//Space complexity :- O(32)
+//Time complexity :- O(n*m*4^m)
+//Space complexity :- O((m+n)*2^m)
 
 // Approach :-
 // row constraint is max 5, hence we can generate all the ways to color first column and save it 
