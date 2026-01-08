@@ -5,8 +5,8 @@ using namespace std;
 //Space complexity :- O(1)
 
 // Approach :-
-// find the sum of the nodes 
-// and then try to delete each node and find the product of splitted trees 
+// find the sum of the nodes in the tree 
+// and then try to delete each edge and find the product of sum of splitted trees 
 // for finding the sum of two tree, current node data + left subtree sum + right subtree sum
 // will give the sum of tree from current node till leaf and when we subtract it from overall sum
 // we'll get the sum of other tree, that way we can try all the solutions 
