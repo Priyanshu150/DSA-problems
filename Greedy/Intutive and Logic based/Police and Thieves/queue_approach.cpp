@@ -41,3 +41,35 @@ class Solution {
         return res;
     }
 };
+
+class Solution {
+  public:
+    int catchThieves(vector<char> &arr, int k) {
+        int n = arr.size(), res = 0;
+        queue<int> police, thieves;
+        
+        for(int i=0; i<n; ++i){
+            // push police and thieves into their respective queues
+            if(arr[i] == 'P')
+                police.push(i);
+            else 
+                thieves.push(i);
+            
+            // process the thieves and police 
+            while(!police.empty() && !thieves.empty()){
+                // theif and policeman are in range 
+                if(abs(police.front() - thieves.front()) <= k){
+                    res++;
+                    thieves.pop();
+                    police.pop();
+                }
+                // they are out of range 
+                else if(police.front() < thieves.front())
+                    police.pop();
+                else 
+                    thieves.pop();
+            } 
+        }
+        return res;
+    }
+};
