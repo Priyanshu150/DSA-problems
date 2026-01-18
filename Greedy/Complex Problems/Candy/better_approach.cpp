@@ -11,7 +11,9 @@ using namespace std;
 // candies[i] will be max(prev_val of candies[i], 1 + candies[i+1])
 
 
-//Link :- https://leetcode.com/problems/candy/
+//Link :- 
+// leetcode - https://leetcode.com/problems/candy/
+// gfg - https://www.geeksforgeeks.org/problems/candy/1
 
 class Solution {
   public:

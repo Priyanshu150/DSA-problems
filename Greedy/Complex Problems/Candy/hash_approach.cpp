@@ -10,7 +10,10 @@ using namespace std;
 // Check the neigbouring index of the curr_ind and assign the candies respectively
 
 
-//Link :- https://leetcode.com/problems/candy/
+//Link :- 
+// leetcode - https://leetcode.com/problems/candy/
+// gfg - https://www.geeksforgeeks.org/problems/candy/1
+
 
 class Solution {
 public:

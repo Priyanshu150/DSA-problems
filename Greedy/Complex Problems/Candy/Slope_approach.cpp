@@ -15,7 +15,10 @@ using namespace std;
 // Once base case if the decreasing curve is just after increasing curve 
 // then there might be chance that we've to manage decreasing curve has more points in that case adjust the ponints accordingly
 
-//Link :- https://leetcode.com/problems/candy/
+
+//Link :- 
+// leetcode - https://leetcode.com/problems/candy/
+// gfg - https://www.geeksforgeeks.org/problems/candy/1
 
 class Solution {
   public:
