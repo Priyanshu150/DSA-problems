@@ -18,32 +18,40 @@ using namespace std;
 //Link :- https://leetcode.com/problems/candy/
 
 class Solution {
-public:
-    int candy(vector<int>& ratings) {
-        int n = ratings.size(), ind = 1, sum = 1;
-
-        while(ind < n){
-            if(ratings[ind] == ratings[ind-1]){
-                sum += 1;
-                ind += 1;
+  public:
+    int minCandy(vector<int> &arr) {
+        int n = arr.size(), total = n, i = 1;
+        
+        // traverse from left to right 
+        while(i < n){
+            // rating of curr child is equal to previous one 
+            if(arr[i] == arr[i-1]){
+                i++;
                 continue;
             }
-            int peak = 1;
-            while(ind < n && ratings[ind] > ratings[ind-1]){
-                peak += 1;
-                sum += peak;
-                ind += 1;
+            
+            // find the increasing sequence 
+            int peak = 0;
+            while(i<n && arr[i] > arr[i-1]){
+                peak++;
+                total += peak;
+                i++;
             }
-
-            int down = 1;
-            while(ind < n && ratings[ind] < ratings[ind-1]){
-                sum += down;
-                down += 1;
-                ind += 1;
+            
+            if(i == n){
+                return total;
             }
-            if(down > peak)     sum += (down - peak);
-        } 
-        return sum;
+            
+            // to find the decreasing sequence 
+            int valley = 0;
+            while(i < n && arr[i] < arr[i-1]){
+                valley++;
+                total += valley;
+                ++i;
+            }
+            /// remove the extra candy added twice 
+            total -= min(peak, valley);
+        }
+        return total;
     }
 };
-
