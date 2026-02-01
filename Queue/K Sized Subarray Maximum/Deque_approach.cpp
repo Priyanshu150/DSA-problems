@@ -19,22 +19,27 @@ using namespace std;
 class Solution {
   public:
     vector<int> maxOfSubarrays(vector<int>& arr, int k) {
-        // code here
-        vector<int> ans;
-        deque<int> dq;
         int n = arr.size();
+        deque<int> dq;
+        vector<int> ans;
         
+        // traverse on each element of array and store the index 
         for(int i=0; i<n; ++i){
+            // maintain a monotonic deque based on index
             while(!dq.empty() && arr[dq.back()] <= arr[i])
                 dq.pop_back();
             
+            // add current element in deque
             dq.push_back(i);
             
-            if(i - dq.front() >= k)
+            // remove the element out of window 
+            if((i - dq.front()) == k)
                 dq.pop_front();
             
-            if(i >= k-1)
+            // for k size window, answer will be index at front 
+            if(i >= k-1){
                 ans.push_back(arr[dq.front()]);
+            }
         }
         return ans;
     }
