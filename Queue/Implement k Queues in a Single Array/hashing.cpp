@@ -5,6 +5,30 @@ using namespace std;
 //Space complexity :- O(n + k) 
 
 // Approach :-
+// use 4 array to store the information of the queues 
+// and a freeInd which denotes which is the free index current
+// arr :- keep the element in this 
+// front & rear array :- keep track of index where front and rear index of each queue appears
+// next :- track the next avialble index and the element index of particular queue which are 
+//      not front or rear element, -1 indicated the end of queue 
+
+// Algorithm :- 
+// isEmpty(qn) => front[qn] is -1, then it's empty
+// isFull() => freeInd is -1, then array is full
+
+// enQueue(qn, ele) => 
+// check if array is full or not ?? If not then 
+// ind = freeInd and update new freeInd
+// if first time insertion then update front[qn] and rear[qn] with -1
+// if not then next[rear[qn]] = ind, represent a chain of element and also help in backtracking
+// arr[ind] equals element and next[ind] = -1, to mark the end 
+
+// deQueue(qn) => 
+// check if queue is already empty or not ?? if not then 
+// find first index of qn used front array, ind = front[qn]
+// using next find the wheather the next element is present in the queue or not 
+// if not update both front[qn] & rear[qn]  with -1
+// update the pointers, next[ind] = freeInd and freeInd = ind 
 
 //link :- https://www.geeksforgeeks.org/problems/implement-k-queues-in-a-single-array/1
 
