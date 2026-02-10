@@ -5,10 +5,11 @@ using namespace std;
 // Space complexity :- O(1)
 
 // Approach :-  
-// use a binary search approach to find the answer 
+// use a binary search on answer approach to find the answer
 // the lowest banana per hour will 1 and highest will be maximum element of array 
+// becasue at minimum the 1 banana can be eaten and maximum banana from a pile can be eaten 
 // apply binary search on the range 
-// traverse in the array and check for the a particular answer 
+// traverse in the pile of bananase and check for the a particular time
 // wheather it'll be possible to complete within given hour
 
 
@@ -16,32 +17,42 @@ using namespace std;
 
 class Solution {
   private:
-    bool isPossible(int banana, vector<int> arr, int &n, int &k){
-        int t = 0;
+    bool isPossible(int s, vector<int> &arr, int &k){
+        int n = arr.size(), timeTaken = 0;
         
+        // traverse on each banana pile 
         for(int i=0; i<n; ++i){
-            int quo = arr[i] / banana, rem = arr[i] % banana;
-            t += quo;
-            t += (rem > 0) ? 1 : 0;
-            if(t > k)
+            // eat atleast k banana from the pile as many times as possible 
+            timeTaken += (arr[i] / s);
+            // eat all the left bananas 
+            timeTaken += (arr[i] % s) > 0 ? 1 : 0;
+            
+            // current time exceed the k limit then it's not possible 
+            if(timeTaken > k)
                 return false;
         }
-        return t <= k;
+        return true;
     }
   
   public:
     int kokoEat(vector<int>& arr, int k) {
-        // Code here
-        int low = 1, n = arr.size(), high, res;
-        high = *max_element(arr.begin(), arr.end());
+        int low = 1, res = -1;
+        // find maximum value of array 
+        int high = *max_element(arr.begin(), arr.end());
         
+        // standard bs on ans
         while(low <= high){
             int mid = low + (high - low)/2;
-            if(isPossible(mid, arr, n, k)){
+            
+            // check with current mid value it's possible to eat all bananas under k hours
+            if(isPossible(mid, arr, k)){
                 res = mid;
-                high = mid-1;
+                high = mid-1;       // try to decrease the answer more 
             }
-            else    low = mid+1;
+            else{
+                // otherwise increase the answer to find a valid answer
+                low = mid+1;
+            }
         }
         return res;
     }
