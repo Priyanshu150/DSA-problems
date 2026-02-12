@@ -19,40 +19,63 @@ using namespace std;
 
 class Solution {
   private:
-    bool isPossible(int height, vector<int> &arr, int k, int w){
-        int n = arr.size(), preSum = 0;
-        vector<int> temp(n+1, 0);
+    bool isPossible(int height, vector<int> &arr, int k, int &w){
+        int n = arr.size(), sum = 0;
+        vector<int> prefixSum(n+1, 0);
         
         for(int i=0; i<n; ++i){
-            preSum += temp[i];
+            // calucalte the new height that has to be added to the next height
+            sum += prefixSum[i];
             
-            if(arr[i] + preSum < height){
-                int diff = height - arr[i] - preSum;
-                if(diff > k)    return false;
-                
-                k -= diff;
-                temp[min(i+w, n)] -= diff;
-                preSum += diff;
-            }
+            // find the current height and the diff we need to maintain the 
+            // current height to the required height 
+            int current_height = (arr[i] + sum);
+            int diff = height - current_height;
+            
+            // the height can not be attained even after giving water for k days
+            if(diff > k)
+                return false;
+            
+            // curr_height is already greater 
+            if(diff <= 0)
+                continue;
+            
+            // apply pefix sum technique to update the height for next w subarray
+            sum += diff;
+            prefixSum[i] += diff;
+            prefixSum[min(n, i+w)] -= diff;
+            
+            k -= diff;      // days decrease by the used ones
         }
         return true;
     }
   
   public:
     int maxMinHeight(vector<int> &arr, int k, int w) {
-        // code here
-        int low = INT_MAX, high = INT_MIN, res = 0;
+        int low = INT_MAX, high = INT_MIN;
         
-        for(auto num: arr){
-            low = min(low, num);
-            high = max(high, num+k);
+        // find the min and max value of array 
+        for(auto height: arr){
+            low = min(low, height);
+            high = max(high, height);
         }
         
+        high += k;
+        int res = low;
+        
+        // standard bs on answer 
         while(low <= high){
             int mid = low + (high - low)/2;
-            if(isPossible(mid, arr, k, w))      low = mid+1;
-            else    high = mid-1;
+            
+            // check if it's possible to attain 'mid' height for all or not 
+            if(isPossible(mid, arr, k, w)){
+                res = mid;
+                low = mid+1;        // maximize the height 
+            }
+            else{
+                high = mid-1;       // minimize the height to find a valid one 
+            }
         }
-        return high;
+        return res;
     }
 };
