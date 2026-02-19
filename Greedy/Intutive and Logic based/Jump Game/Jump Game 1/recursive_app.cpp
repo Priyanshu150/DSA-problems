@@ -2,7 +2,7 @@
 using namespace std;
 
 //Time complexity :- O(n*n)
-//Space complexity :- O(1) 
+//Space complexity :- O(n) 
 
 // Approach :-
 // try out all way to jump from current index and explore all possibilities using recursion 

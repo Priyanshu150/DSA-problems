@@ -2,7 +2,7 @@
 using namespace std;
 
 //Time complexity :- O(n)
-//Space complexity :- O(n) 
+//Space complexity :- O(1) 
 
 //link :- https://leetcode.com/problems/jump-game/description/
 
