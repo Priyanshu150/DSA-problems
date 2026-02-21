@@ -5,7 +5,7 @@ using namespace std;
 // Space complexity :- O(1)
 
 // Approach :-  
-// The range of h-index can be b/w (0 - n), because at max we can have n count 
+// The range of h-index can be b/w (1 - n), because at max we can have n count 
 // we'll use binary serach on this range and try to maximize it 
 // for every h-index we can count if it's possible 
 // i.e whether the count of rankings in the array is more than or equal to the given h-index or not 
@@ -19,6 +19,7 @@ class Solution {
         int cnt = 0;
         
         for(int i=0; i<n; ++i){
+            // count the number of citation value having greater than mid 
             if(val <= citations[i])
                 cnt++;
         }
@@ -30,13 +31,15 @@ class Solution {
         // code here
         int n = citations.size(), low = 0, high = n, res = 0;
         
+        // standard bs on answer 
         while(low <= high){
             int mid = low + (high - low)/2;
+            // check for current mid is possible to get at least mid citation value papers 
             if(isPossible(mid, citations, n)){
                 res = mid;
-                low = mid+1;
+                low = mid+1;            // maximize the value 
             }
-            else    high = mid-1;
+            else    high = mid-1;       // minimize the value and find a valid one 
         }
         return res;
     }
