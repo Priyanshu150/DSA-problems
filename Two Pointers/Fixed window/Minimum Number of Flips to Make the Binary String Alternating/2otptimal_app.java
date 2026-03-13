@@ -4,7 +4,9 @@ import java.util.*
 //Space complexity :- O(2*n)
 
 // Approach 
-// 
+// Instead of making the current string (s+s)
+// we can use modulo operator and acheive the same 
+// the approach same from previous one 
 
 //Link :- https://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/description/
 

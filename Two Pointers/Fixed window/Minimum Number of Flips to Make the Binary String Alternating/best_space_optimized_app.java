@@ -4,7 +4,9 @@ import java.util.*
 //Space complexity :- O(1)
 
 // Approach 
-// 
+// instead of storing both the result we can calculate the when need 
+// for one string we'll keep 0 at odd position and 1 at even and vice versa for other 
+// these value we can directly store in a variable rather than making complete string 
 
 //Link :- https://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/description/
 

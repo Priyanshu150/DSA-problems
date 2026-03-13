@@ -5,7 +5,10 @@ using namespace std;
 //Space complexity :- O(2*n)
 
 // Approach :-
-
+// we'll make new string by appeanding current string as s+s 
+// and also the final result of 2*n length i.e 010... or 1010...
+// we'll compare the matching bits and then we'll calculate it for every window of size n 
+// using sliding window, we can compare all the window and calculate the min flips needed 
 
 //link :- https://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/description/
 
