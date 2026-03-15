@@ -4,6 +4,15 @@ import java.util.*
 // Space complexity :- O(m)
 
 // approach :- 
+// Intead of matching the complete string we can make use of LPS 
+// we'll make a LPS array, which keep track of the longest suffix which is also a prefix till current index 
+// whenever we find the string match we try to match it parallely with pattern string 
+// if some middle char is not matched so instead of restarting we can go to LPS[current-1] index 
+// it works because LPS utilises the capabili of suffix and prefix
+// if some prefix is repeating which also a suffix then it's tends to match in haystack string 
+// hence we need not compare the complete string 
+
+// link :- https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 
 // Code :- 
 

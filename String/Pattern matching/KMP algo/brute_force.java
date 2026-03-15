@@ -4,6 +4,11 @@ import java.util.*
 // Space complexity :- O(1)
 
 // approach :- 
+// for every character in haystack, if it matching with the first char of needle 
+// then try to match all the rest if we find complete match then it's present 
+// similarly find all the matches
+
+// link :- https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 
 // Code :- 
 
