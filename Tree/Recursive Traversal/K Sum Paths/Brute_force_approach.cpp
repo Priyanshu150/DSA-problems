@@ -5,9 +5,10 @@ using namespace std;
 // Space complexity :- O(n)
 
 // Approach :-  
-// Traverse to every node and store the path till that node
-// Use either postorder / preorder traversal technique
-// Traverse on the path array from end and keep add each value to sum. If sum is equal to k then increment the res
+// store the node in top-down format into the array 
+// traverse from end to st of array after post-traversal of every node 
+// if we found the sum, matain a counter to keep track of the sum 
+// backtrack the previous node, in-order to remove it from the other path 
 
 // Link :- https://www.geeksforgeeks.org/problems/k-sum-paths/1
 
@@ -25,25 +26,30 @@ struct Node {
 class Solution {
   private:
     void solve(Node *node, int &k, int &res, vector<int> &path){
+        // base case 
         if(!node)   return;
-        
+
+        // add current node into the ds 
         path.push_back(node -> data);
         
+        // traverse on the subtree 
         solve(node -> left, k, res, path);
         solve(node -> right, k, res, path);
         
         int n = path.size(), sum = 0;
+        // find the sum from end of the node to top
         for(int i=n-1; i>=0; --i){
             sum += path[i];
+            // if it exists, store the number of times it does 
             if(sum == k)
                 res++;
         }
+        // backtack
         path.pop_back();
     }
   
   public:
     int sumK(Node *root, int k) {
-        // code here
         int res = 0;
         vector<int> path;
         solve(root, k, res, path);

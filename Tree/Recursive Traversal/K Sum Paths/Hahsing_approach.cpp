@@ -5,9 +5,8 @@ using namespace std;
 // Space complexity :- O(n)
 
 // Approach :-  
-// Traverse to every node and  Use either postorder / preorder traversal technique
-// Use the technique of subarray sum equal to target
-// Use hashmap to store the sum and hence calculate the result from that
+// we can store the sum while travesing on the tree 
+// and can use prefix sum technique to find wheather a subarray exist or not 
 
 // Link :- https://www.geeksforgeeks.org/problems/k-sum-paths/1
 
@@ -28,18 +27,22 @@ class Solution {
     unordered_map<int,int> mp;
     
     void solve(Node* node, int &k, int &sum, int &res){
+        // base case 
         if(!node)   return;
         
+        // calculate the sum of path 
         sum += node -> data;
+        // find the target of the subarray
         int target = sum - k;
         if(mp.count(target))
             res += mp[target];
-        
+        // store the contribution of the element 
         mp[sum] += 1;
-        
+        // traverse on the subtree 
         solve(node -> left, k, sum, res);
         solve(node -> right, k, sum, res);
         
+        // backtrack to not interept other path contribution 
         mp[sum] -= 1;
         sum -= node -> data;
     }
@@ -48,6 +51,7 @@ class Solution {
     int sumK(Node *root, int k) {
         // code here
         int sum = 0, res = 0;
+        // add 0 contribution into the map 
         mp[0] = 1;
         solve(root, k, sum, res);
         return res;
