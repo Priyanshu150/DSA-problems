@@ -15,7 +15,7 @@ using namespace std;
 // Instead of calling it again we can use dp and store it 
 // for every node count the number of left and right node use the dp table to find the answer 
 // and update in answer array using index stored in hash table 
-
+// this sequence is also called as catalan number 
 
 // links :- https://www.geeksforgeeks.org/problems/number-of-bst-from-array/1
 
