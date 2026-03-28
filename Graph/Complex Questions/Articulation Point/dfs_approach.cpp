@@ -23,59 +23,83 @@ using namespace std;
 class Solution {
   private:
     int timer = 1;
+    vector<vector<int>> graph;
+    vector<int> tin, low, vis, isAP;
     
-    void dfs(int node, int parent, vector<int> &vis, int tin[], int low[],
-             vector<int> &mark, vector<vector<int>> &adj) {
-                 
+    void dfs(int node, int parent){
         vis[node] = 1;
         tin[node] = low[node] = timer;
-        timer++;
+        ++timer;
+        
         int child = 0;
         
-        for (auto it : adj[node]) {
-            if (it == parent) continue;
-            if (!vis[it]) {
-                dfs(it, node, vis, tin, low, mark, adj);
-                low[node] = min(low[node], low[it]);
-                if (low[it] >= tin[node] && parent != -1) {
-                    mark[node] = 1;
+        for(auto adjNd: graph[node]){
+            // adjNd should not be parent 
+            if(adjNd == parent){
+                continue;
+            }
+            else if(!vis[adjNd]){
+                dfs(adjNd, node);
+                // update the lowest time for the current node base on adjNd
+                low[node] = min(low[node], low[adjNd]);
+                
+                // check if adjNd can access someone before node then it's not AP
+                // if parent is -1, then it's not possible to reach node before that
+                if(tin[node] <= low[adjNd] && parent != -1){
+                    isAP[node] = 1;
                 }
+                // count the number of child nodes for parent node 
                 child++;
             }
-            else {
-                low[node] = min(low[node], tin[it]);
+            else{
+                //for not visited node, minimum time should be insertion time for adjacent node
+                // because we're deleting the node not an edge 
+                low[node] = min(low[node], tin[adjNd]);
             }
         }
-        if (child > 1 && parent == -1) {
-            mark[node] = 1;
+        // for parent check the special condition depending on the child it has
+        if(child > 1 && parent == -1){
+            isAP[node] = 1;
         }
     }
   
   public:
-    vector<int> articulationPoints(int n, vector<vector<int>>& edges) {
-        // Code here
-        vector<vector<int>> adj(n);
+    vector<int> articulationPoints(int V, vector<vector<int>>& edges) {
+        graph.resize(V);
         
         for(auto edge: edges){
-            adj[edge[0]].push_back(edge[1]);
-            adj[edge[1]].push_back(edge[0]);
+            int u = edge[0], v = edge[1];
+            
+            // create a un-directed graph
+            graph[u].push_back(v);
+            graph[v].push_back(u);
         }
-        vector<int> vis(n, 0);
-        int tin[n];
-        int low[n];
-        vector<int> mark(n, 0);
-        for (int i = 0; i < n; i++) {
-            if (!vis[i]) {
-                dfs(i, -1, vis, tin, low, mark, adj);
+        // intialize time of intersion, lowest time of insertion and visited with n size and default values
+        vis.resize(V, 0);
+        tin.resize(V, INT_MAX);
+        low.resize(V, INT_MAX);
+        // initialize is articulation point with 0 indicating as no one is that 
+        isAP.resize(V, 0);
+        
+        for(int i=0; i<V; ++i){
+            // current node is not visited 
+            if(!vis[i]){
+                dfs(i, -1);
             }
         }
+        
         vector<int> ans;
-        for (int i = 0; i < n; i++) {
-            if (mark[i] == 1) {
+        
+        for(int i=0; i<V; ++i){
+            // current node is articulation point 
+            if(isAP[i] == 1){
                 ans.push_back(i);
             }
         }
-        if (ans.size() == 0) return { -1};
-        return ans;
+        if(ans.size() > 0)
+            return ans;
+        
+        // no articulation point found 
+        return {-1};
     }
 };
