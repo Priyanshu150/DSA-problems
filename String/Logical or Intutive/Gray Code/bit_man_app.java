@@ -4,7 +4,8 @@ import java.util.*
 // Space complexity :- O(1)
 
 // Approach :- 
-// 
+// convert the binary code to gray code, b1 b2 b3 b4 => g1 g2 g3 g4
+// g1 = b1, g2 = b1^b2, g3 = b2^b3, g4 = b3^b4
 
 
 // Links :- https://www.geeksforgeeks.org/problems/gray-code-1611215248/1
