@@ -5,6 +5,10 @@ using namespace std;
 // Space complexity :- O(n)
 
 // Approach :- 
+// we've to find the for any element whether a left min element and right max element exist or not 
+// for every element we'll find which is largest element on the right 
+// and also which is smallest element on the left 
+// if any element satisfy the case then it's possible 
 
 
 // Links :- https://www.geeksforgeeks.org/problems/sorted-subsequence-of-size-3/1

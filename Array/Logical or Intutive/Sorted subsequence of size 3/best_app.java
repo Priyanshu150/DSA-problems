@@ -4,6 +4,11 @@ import java.util.*
 // Space complexity :- O(1)
 
 // Approach :- 
+// we'll maintain the first two element in variable and as soon we find the third element greater than those 2 
+// then it's possible, using these 3 element 
+// we've to maintain 3 variables =>  first, prevFirst and second element 
+// maitain only first min will not satify our condition and fail for some test case 
+// example - [12, 11, 10, 5, 6, 2, 30]
 
 
 // Links :- https://www.geeksforgeeks.org/problems/sorted-subsequence-of-size-3/1
