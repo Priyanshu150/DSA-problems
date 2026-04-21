@@ -1,11 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Time complextiy :- O()
-// Space complexity :- O()
-
-// Approach :- 
-// 
+//Time complextiy :- O(m+n)
+// Space complexity :- O(1)
 
 
 // Link :- https://www.geeksforgeeks.org/problems/two-water-jug-problem3402/1
