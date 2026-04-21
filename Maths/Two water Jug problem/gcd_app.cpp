@@ -4,6 +4,11 @@ using namespace std;
 //Time complextiy :- O(m+n)
 // Space complexity :- O(1)
 
+// Approach :- 
+// we'll use these strategy to solve this problem 
+// Strategy 1: Pour from m to n
+// Strategy 2: Pour from n to m
+
 
 // Link :- https://www.geeksforgeeks.org/problems/two-water-jug-problem3402/1
 
