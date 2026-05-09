@@ -4,7 +4,10 @@
 // Space complexity :- O(n)
 
 // Approach :-  
-// 
+// maintain a array with difference b/w two cost of robot doing task 
+// sort them based on the absolute diff value 
+// take the higher value of the cost/profit from the sorted value
+//  until x or y is valid for respective robot 
 
 
 // Links :- https://www.geeksforgeeks.org/problems/max-profit-from-two-machines/1
