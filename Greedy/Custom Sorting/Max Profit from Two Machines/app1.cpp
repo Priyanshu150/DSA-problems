@@ -9,6 +9,11 @@
 // take the higher value of the cost/profit from the sorted value
 //  until x or y is valid for respective robot 
 
+// Intution :- 
+// The idea is that we should first handle the tasks where the difference between profits is highest, 
+// because choosing the wrong machine for those tasks would cause the biggest loss. 
+// For tasks where both machines give similar profits, it doesn’t matter much who processes them. 
+// So, we greedily assign each task to the machine who gives higher profit while respecting constraints.
 
 // Links :- https://www.geeksforgeeks.org/problems/max-profit-from-two-machines/1
 

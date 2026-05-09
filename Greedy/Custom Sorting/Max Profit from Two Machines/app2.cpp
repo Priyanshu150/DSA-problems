@@ -8,6 +8,13 @@
 // sort them based on the lower to higher difference value, except negative difference sort them by absolute value 
 // pick the next x trasaction from robot A and next y transaction from robot B 
 
+// Intution :- 
+// The idea is that we should first handle the tasks where the difference between profits is highest, 
+// because choosing the wrong machine for those tasks would cause the biggest loss. 
+// For tasks where both machines give similar profits, it doesn’t matter much who processes them. 
+// So, we greedily assign each task to the machine who gives higher profit while respecting constraints.
+
+
 // Links :- https://www.geeksforgeeks.org/problems/max-profit-from-two-machines/1
 
 class Solution {
