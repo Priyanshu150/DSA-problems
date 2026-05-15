@@ -9,7 +9,7 @@ using namespace std;
 // and it will satisfy the property that not possible for some range followed by possible for rest of them 
 // low will be 1 and high will be  sum of all the minimum energy in the array 
 // we also need to sort the array in order for the possible funtion to work   
-// we'll sort them based on higher difference value before the higher the difference the more energy we'll have at end 
+// we'll sort them based on higher difference value before the higher the difference the more energy we'll have at end
 
 //Link :- https://leetcode.com/problems/minimum-initial-energy-to-finish-tasks/
 
