@@ -17,23 +17,28 @@ class Solution {
 public:
     int findMin(vector<int>& nums) {
         int n = nums.size(), low = 0, high = n-1, res = INT_MAX;
-
+        
+        // standard binary serach 
         while(low <= high){
             int mid = low + (high - low)/2;
             
+            // left, mid and right are having the same value srink the serach space 
             if(nums[mid] == nums[low] && nums[mid] == nums[high]){
                 res = min(res, nums[low]);
                 low += 1;
                 high -= 1;
             }
+            // array is completely sorted 
             else if(nums[low] <= nums[mid] && nums[mid] <= nums[high]){
                 res = min(res, nums[low]);
                 break;
             }
+            // left part is sorted 
             else if(nums[low] <= nums[mid]){
                 res = min(res, nums[low]);
                 low = mid+1;
             }
+            // right part is sorted 
             else{
                 res = min(res, nums[mid]);
                 high = mid-1;
