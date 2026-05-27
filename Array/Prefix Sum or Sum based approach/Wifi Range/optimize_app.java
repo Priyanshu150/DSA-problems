@@ -4,10 +4,9 @@ import java.util.*
 // Space complexity :- O(1)
 
 // Approach :-  
-// maintain a maxReach variable which update the range for every wifi 
-// i.e. max value of (x + i)
+// maintain a maxReach wifi index which update the range for every wifi i.e. max value of (x + i)
 // and check if there is a gap left for the previous reachable room 
-// if gap exist then it's not possible 
+// if gap exist then it's not possible i.e. (maxReach < i-x-1)
 
 // Link :-  https://www.geeksforgeeks.org/problems/wifi-range--170647/1
 
