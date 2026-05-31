@@ -11,7 +11,8 @@ using namespace std;
 // Link :-  https://www.geeksforgeeks.org/problems/consecutive-numbers-for-sum3132/1
 
 class Solution {
-    public boolean isSumOfConsecutive(int n) {
+  public:
+    bool isSumOfConsecutive(int n) {
         // base case 
         if(n == 1)
             return false;
@@ -22,4 +23,4 @@ class Solution {
         
         return true;
     }
-}
+};
