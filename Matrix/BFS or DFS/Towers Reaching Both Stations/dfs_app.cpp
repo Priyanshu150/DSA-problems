@@ -4,6 +4,9 @@
 // Space complexity :- O(n+m)
 
 // Approach :-  
+// For each corder cell of tower P and Q, apply dfs to the reachable tower seprately 
+// since we're standing from ending cell first we'll reverse the logic and make it greater than equal to instead of smaller than equal to
+// after both dfs is completed, count the number of tower which can reach both 
 
 //Link :- https://www.geeksforgeeks.org/problems/geeks-island--170646/1
 
