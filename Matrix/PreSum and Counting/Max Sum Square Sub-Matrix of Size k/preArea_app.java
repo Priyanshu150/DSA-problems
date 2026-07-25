@@ -4,6 +4,11 @@ import java.util.*
 // Space complexity :- O(n*m)
 
 // Approach :- 
+// For every cell we can find the area till that and store it into a matrix 
+// Area of current cell will be area[row][col-1] + area[row-1][col] - area[row-1][col-1]
+// we've to create all k*k submatrix and maintain the maximum area for those 
+// area for submatrix can be calculate using pre caluclate area matrix 
+// i.e area = area[row][col] - area[row][col-k] - area[row-k][col] - area[row-k][col-k]
 
 // Links :- https://www.geeksforgeeks.org/problems/coins-of-geekland--141631/1
 
